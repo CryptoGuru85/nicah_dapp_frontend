@@ -1,0 +1,80 @@
+{
+  "name": "cryptolegions",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@mui/icons-material": "^5.2.4",
+    "@mui/lab": "^5.0.0-alpha.61",
+    "@mui/material": "^5.2.4",
+    "@mui/styles": "^5.2.3",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.0.3",
+    "@types/node": "^16.11.14",
+    "@types/react": "^17.0.37",
+    "@types/react-dom": "^17.0.11",
+    "@types/react-material-ui-form-validator": "^2.1.1",
+    "@web3-react/core": "^6.1.9",
+    "@web3-react/injected-connector": "^6.0.7",
+    "axios": "^0.24.0",
+    "classnames": "^2.3.1",
+    "emailjs-com": "^3.2.0",
+    "fs": "^0.0.1-security",
+    "react": "^17.0.2",
+    "react-beautiful-dnd": "^13.1.0",
+    "react-dnd": "^14.0.5",
+    "react-dnd-html5-backend": "^14.1.0",
+    "react-dnd-touch-backend": "^15.1.1",
+    "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0",
+    "react-icons": "^4.3.1",
+    "react-material-ui-form-validator": "^3.0.0",
+    "react-player": "^2.9.0",
+    "react-redux": "^7.2.6",
+    "react-router": "^6.2.1",
+    "react-router-dom": "^6.2.1",
+    "react-scripts": "4.0.3",
+    "react-youtube": "^7.14.0",
+    "redux": "^4.1.2",
+    "redux-devtools-extension": "^2.13.9",
+    "save-dev": "0.0.1-security",
+    "stream-browserify": "^3.0.0",
+    "typescript": "^4.5.4",
+    "unirest": "^0.6.0",
+    "web-vitals": "^2.1.2",
+    "web3": "^1.6.1"
+  },
+  "devDependencies": {
+    "@types/react-beautiful-dnd": "^13.1.2",
+    "@types/react-helmet": "^6.1.5",
+    "node-sass": "^7.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "style": "node-sass --watch ./src/stylesheet/index.scss ./public/assets/style/stylesheet.css",
+    "build": "CI=false && node-sass ./src/stylesheet/index.scss ./public/assets/style/stylesheet.css && react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
