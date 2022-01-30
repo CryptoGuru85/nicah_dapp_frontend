@@ -193,6 +193,144 @@ const Help = () => {
           />
         )}
       </Helmet>
+      <Card
+        sx={{
+          background: "#16161699",
+          p: 2,
+          my: 4,
+        }}
+      >
+        <Typography
+          variant="h6"
+          sx={{
+            fontWeight: "bold",
+            textAlign: "center",
+            borderBottom: "1px solid #fff",
+            paddingBottom: 2,
+          }}
+        >
+          Need help from our team? Send us a messages with the form below, and
+          we’ll get back to you within 24 hours if your request relates to a
+          bug/issue in the game.
+        </Typography>
+        <Box sx={{ p: 4 }}>
+          <form
+            onSubmit={(event: any) => {
+              createTicket(event);
+            }}
+          >
+            <Grid container spacing={2} sx={{ marginBottom: 4 }}>
+              <Grid item md={6}>
+                <TextField
+                  label="Email"
+                  placeholder="Your Email"
+                  onChange={(e: any) => setEmail(e.target.value)}
+                  name="email"
+                  value={email}
+                  sx={{ width: "100%" }}
+                  type="email"
+                  id="outlined-required"
+                  required
+                  helperText={emailValidationText}
+                  className={classes.textField}
+                />
+              </Grid>
+              <Grid item md={6}>
+                <TextField
+                  id="outlined-basic"
+                  label="DiscordID"
+                  placeholder="Your Discord(optional)"
+                  value={discordID}
+                  sx={{ width: "100%" }}
+                  onChange={(e) => setDiscordID(e.target.value)}
+                />
+              </Grid>
+            </Grid>
+            <Grid container spacing={2} sx={{ marginBottom: 4 }}>
+              <Grid item xs={12}>
+                <TextField
+                  label="Title"
+                  placeholder="Title of your issue"
+                  onChange={(e: any) => setSubject(e.target.value)}
+                  name="subject"
+                  value={subject}
+                  sx={{ width: "100%" }}
+                  id="outlined-required"
+                  required
+                />
+              </Grid>
+            </Grid>
+            <Grid container spacing={2} sx={{ marginBottom: 4 }}>
+              <Grid item xs={12}>
+                <TextField
+                  label="Description"
+                  placeholder="Please describe your issue with as many details as possible. "
+                  onChange={(e: any) => setDescription(e.target.value)}
+                  name="description"
+                  value={description}
+                  sx={{ width: "100%" }}
+                  id="outlined-required"
+                  required
+                  multiline
+                  rows={7}
+                />
+              </Grid>
+            </Grid>
+            <Grid container spacing={2} sx={{ marginBottom: 4 }}>
+              <Grid item md={6} sx={{ display: "flex", alignItems: "center" }}>
+                <label htmlFor="contained-button-file">
+                  <Input
+                    accept="*"
+                    id="contained-button-file"
+                    multiple
+                    type="file"
+                    onChange={(e) => setFile(e)}
+                  />
+                  <IconButton
+                    color="primary"
+                    aria-label="upload picture"
+                    component="span"
+                  >
+                    <AttachFileRoundedIcon />
+                  </IconButton>
+                  {attachmentFile
+                    ? attachmentFile["name"] +
+                      " / " +
+                      (attachmentFile["size"] / 1024 / 1024).toFixed(3) +
+                      "MB"
+                    : "Attachment File (optional)"}
+                </label>
+              </Grid>
+              <Grid item md={6}>
+                <TextField
+                  id="outlined-select"
+                  select
+                  label="Priority"
+                  value={priority}
+                  onChange={(e) => setPriority(e.target.value)}
+                  helperText="Please select priority"
+                  sx={{ width: "100%" }}
+                >
+                  <MenuItem value={"1"}>Low</MenuItem>
+                  <MenuItem value={"2"}>Medium</MenuItem>
+                  <MenuItem value={"3"}>High</MenuItem>
+                  <MenuItem value={"4"}>Urgent</MenuItem>
+                </TextField>
+              </Grid>
+            </Grid>
+            <Box sx={{ display: "flex" }}>
+              <Button
+                sx={{ marginLeft: "auto" }}
+                color="primary"
+                variant="contained"
+                type="submit"
+              >
+                Create ticket
+              </Button>
+            </Box>
+          </form>
+        </Box>
+      </Card>
       <Snackbar
         open={openSnackBar}
         TransitionComponent={TransitionUp}
